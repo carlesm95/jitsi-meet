@@ -43,6 +43,7 @@ import {
     setVideoIconEnabled,
     showDialPadButton,
     showEtherpadButton,
+    showCobrowserButton,
     showSharedVideoButton,
     showSIPCallButton,
     showToolbox
