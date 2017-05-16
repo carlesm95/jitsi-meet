@@ -209,6 +209,17 @@ export default {
         },
         tooltipKey: 'toolbar.etherpad'
     },
+        
+    cobrowser: {
+        classNames: [ 'button', 'icon-share-brow' ],
+        enabled: true,
+        id: 'toolbar_button_cobrowser',
+        onClick() {
+            JitsiMeetJS.analytics.sendEvent('toolbar.cobrowser.clicked');
+            APP.UI.emitEvent(UIEvents.COBROWSER_CLICKED);
+        },
+        tooltipKey: 'toolbar.cobrowser'
+    },
 
     /**
      * The descriptor of the toolbar button which toggles full-screen mode.
