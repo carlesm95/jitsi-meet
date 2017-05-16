@@ -156,6 +156,7 @@
 
 #sharedVideo,
 #etherpad,
+#cobrowser,
 #localVideoWrapper>video,
 #localVideoWrapper>object,
 #localVideoWrapper,
@@ -177,6 +178,14 @@
 }
 
 #etherpad {
+    z-index: $zindex0;
+}
+
+#cobrowser {
+    text-align: center;
+}
+
+#cobrowser {
     z-index: $zindex0;
 }
 
