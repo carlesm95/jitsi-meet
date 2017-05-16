@@ -22,6 +22,7 @@ export default {
     VIDEO_MUTED: "UI.video_muted",
     VIDEO_UNMUTING_WHILE_AUDIO_ONLY: "UI.video_unmuting_while_audio_only",
     ETHERPAD_CLICKED: "UI.etherpad_clicked",
+    COBROWSER_CLICKED: "UI.cobrowser_clicked",
     SHARED_VIDEO_CLICKED: "UI.start_shared_video",
     /**
      * Updates shared video with params: url, state, time(optional)
@@ -67,6 +68,8 @@ export default {
     TOGGLED_FILMSTRIP: "UI.toggled_filmstrip",
     TOGGLE_SCREENSHARING: "UI.toggle_screensharing",
     TOGGLED_SHARED_DOCUMENT: "UI.toggled_shared_document",
+    TOGGLED_SHARED_BROWSER: "UI.toggled_shared_browser",
+    TOGGLED_COBROWSER: "UI.toggled_cobrowser",
     CONTACT_CLICKED: "UI.contact_clicked",
     HANGUP: "UI.hangup",
     LOGOUT: "UI.logout",
