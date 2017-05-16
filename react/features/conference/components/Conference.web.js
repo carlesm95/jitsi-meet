@@ -76,6 +76,7 @@ class Conference extends Component {
                             <div id = 'sharedVideoIFrame' />
                         </div>
                         <div id = 'etherpad' />
+                        <div id = 'cobrowser' />
 
                         <Watermarks />
 
