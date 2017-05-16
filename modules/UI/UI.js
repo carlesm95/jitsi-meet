@@ -15,6 +15,7 @@ import SideContainerToggler from "./side_pannels/SideContainerToggler";
 import UIUtil from "./util/UIUtil";
 import UIEvents from "../../service/UI/UIEvents";
 import EtherpadManager from './etherpad/Etherpad';
+import CobrowserManager from './cobrowser/Cobrowser';
 import SharedVideoManager from './shared_video/SharedVideo';
 import Recording from "./recording/Recording";
 
@@ -69,6 +70,7 @@ UI.eventEmitter = eventEmitter;
 UI.overlayVisible = false;
 
 let etherpadManager;
+let cobrowserManager;
 let sharedVideoManager;
 
 let followMeHandler;
@@ -463,11 +465,24 @@ UI.initEtherpad = name => {
     APP.store.dispatch(showEtherpadButton());
 };
 
+UI.initCobrowser = name => {
+    if (cobrowserManager || !config.cobrowser_base || !name) {
+        return;
+    }
+    logger.log('Cobrowser is enabled');
+    cobrowserManager
+        = new CobrowserManager(config.cobrowser_base, name, eventEmitter);
+
+    APP.store.dispatch(showCobrowserButton());
+};
+
 /**
  * Returns the shared document manager object.
  * @return {EtherpadManager} the shared document manager object
  */
 UI.getSharedDocumentManager = () => etherpadManager;
+
+UI.getSharedBrowserManager = () => cobrowserManager;
 
 /**
  * Show user on UI.
@@ -1372,6 +1387,9 @@ const UIListeners = new Map([
     [
         UIEvents.ETHERPAD_CLICKED,
         () => etherpadManager && etherpadManager.toggleEtherpad()
+    ], [
+        UIEvents.COBROWSER_CLICKED,
+        () => cobrowserManager && cobrowserManager.toggleCobrowser()
     ], [
         UIEvents.SHARED_VIDEO_CLICKED,
         () => sharedVideoManager && sharedVideoManager.toggleSharedVideo()
