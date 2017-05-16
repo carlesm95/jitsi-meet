@@ -256,6 +256,19 @@ export function showEtherpadButton(): Function {
 }
 
 /**
+ * Shows cobrowser button if it's not shown.
+ *
+ * @returns {Function}
+ */
+export function showCobrowserButton(): Function {
+    return (dispatch: Dispatch<*>) => {
+        dispatch(setToolbarButton('cobrowser', {
+            hidden: false
+        }));
+    };
+}
+
+/**
  * Event handler for full screen toggled event.
  *
  * @param {boolean} isFullScreen - Flag showing whether app in full
